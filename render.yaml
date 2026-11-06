@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: aethrivo-platform
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@aethrivo.com
+      - key: ADMIN_PASSWORD
+        value: Admin@123
+      - key: MANAGER_EMAIL
+        value: manager@aethrivo.com
+      - key: MANAGER_PASSWORD
+        value: Manager@123
+      - key: MONGODB_URI
+        sync: false

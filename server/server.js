@@ -29,8 +29,11 @@ const app = express();
 await connectDB();
 
 // Middleware
-app.use(helmet());
-app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN ? [process.env.CLIENT_ORIGIN, 'http://localhost:5173'] : true,
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -47,11 +50,21 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/manager', managerRoutes);
 app.use('/api/public', publicRoutes);
 
+// Health check endpoint for Render / monitoring
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', uptime: process.uptime(), timestamp: new Date() });
+});
+
 // Serve client build in production
+const clientDist = path.resolve(__dirname, '../client/dist');
 if (process.env.NODE_ENV === 'production') {
-  const clientDist = path.resolve(__dirname, '../client/dist');
   app.use(express.static(clientDist));
-  app.get('*', (req, res) => res.sendFile(path.join(clientDist, 'index.html')));
+  app.get('*', (req, res) => {
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ success: false, error: 'Endpoint not found' });
+    }
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
 }
 
 // Error handling
