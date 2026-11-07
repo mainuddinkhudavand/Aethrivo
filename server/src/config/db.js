@@ -2,9 +2,12 @@
 // Resilient MongoDB connection helper with in-memory fallback and auto-seeding
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { MongoMemoryServer } from 'mongodb-memory-server';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 let mongod = null;
 
@@ -53,145 +56,29 @@ async function seedDefaultData() {
       console.log('✅ Manager user created (manager@aethrivo.com)');
     }
 
-    // Seed Verticals
-    const verticalsCount = await Vertical.countDocuments();
-    if (verticalsCount === 0) {
-      const initialVerticals = [
-        {
-          slug: 'ipr-patents',
-          name: 'Intellectual Property Rights (IPR)',
-          positioningLine: 'End-to-End Patent Filing, Trademark & IP Protection',
-          description: 'Comprehensive patent search, drafting, filing, opposition, and commercialization services for inventors, researchers, and enterprises.',
-          services: ['Prior Art Patent Search', 'Patent Specification Drafting', 'Trademark & Copyright Filing', 'Freedom to Operate (FTO) Search', 'IP Portfolio Management'],
-          icon: 'Shield',
-          accentColor: 'indigo-600',
-          order: 1,
-          isActive: true,
-        },
-        {
-          slug: 'ai-emerging-tech',
-          name: 'AI & Emerging Technologies',
-          positioningLine: 'Next-Gen Intelligence, Deep Learning & Enterprise Solutions',
-          description: 'Custom AI solutions, machine learning architecture, generative AI pilots, and advanced algorithmic consulting.',
-          services: ['Generative AI Implementation', 'Custom LLM Fine-Tuning', 'Computer Vision Pipelines', 'AI Governance & Compliance'],
-          icon: 'Cpu',
-          accentColor: 'cyan-500',
-          order: 2,
-          isActive: true,
-        },
-        {
-          slug: 'corporate-training',
-          name: 'Corporate & Executive Training',
-          positioningLine: 'Industry-Aligned Upskilling & Leadership Programs',
-          description: 'Bespoke corporate workshops, technology immersion bootcamps, and executive certifications led by verified industry veterans.',
-          services: ['Executive Technology Strategy', 'Full-Stack Developer Bootcamps', 'Data Science for Leaders', 'Agile & DevOps Transformation'],
-          icon: 'GraduationCap',
-          accentColor: 'violet-600',
-          order: 3,
-          isActive: true,
-        },
-        {
-          slug: 'research-consulting',
-          name: 'Research & Innovation Consulting',
-          positioningLine: 'Bridging Academic Discovery with Commercial Viability',
-          description: 'Assisting research institutions and scholars with high-impact publications, grant proposals, industry technology transfer, and prototype validation.',
-          services: ['Grant Proposal Writing', 'Tech Transfer & Licensing', 'Joint R&D Consortia', 'Proof-of-Concept Acceleration'],
-          icon: 'FlaskConical',
-          accentColor: 'amber-500',
-          order: 4,
-          isActive: true,
-        },
-        {
-          slug: 'incubation-startups',
-          name: 'Startup Incubation & Entrepreneurship',
-          positioningLine: 'Venture Building, Mentorship & Investor Readiness',
-          description: 'Dedicated incubation support for deep-tech and student startups, including pitch deck coaching, seed syndication, and MVP development.',
-          services: ['MVP Architecture Sprint', 'Pitch Deck & Financial Modeling', 'Investor Matching', 'Legal & Regulatory Incorporation'],
-          icon: 'Lightbulb',
-          accentColor: 'emerald-600',
-          order: 5,
-          isActive: true,
-        },
-        {
-          slug: 'legal-compliance',
-          name: 'Legal & Institutional Compliance',
-          positioningLine: 'Regulatory Assurance, MoU Structuring & Governance',
-          description: 'Drafting cross-institutional MoUs, non-disclosure agreements, data privacy audits, and institutional policy frameworks.',
-          services: ['Bilateral MoU Drafting', 'Data Protection & GDPR Audits', 'Contract Lifecycle Management', 'University Governance Advisory'],
-          icon: 'FileText',
-          accentColor: 'pink-600',
-          order: 6,
-          isActive: true,
-        },
-      ];
-      await Vertical.insertMany(initialVerticals);
-      console.log('✅ Default verticals seeded');
+    // Seed Verticals (Sync all 9 core business verticals from blueprint)
+    const { default: verticalsData } = await import('../seed/data/verticals.js');
+    const legacySlugs = ['ipr-patents', 'ai-emerging-tech', 'corporate-training', 'research-consulting', 'incubation-startups', 'legal-compliance'];
+    await Vertical.deleteMany({ slug: { $in: legacySlugs } });
+    for (const vert of verticalsData) {
+      await Vertical.findOneAndUpdate(
+        { slug: vert.slug },
+        vert,
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      );
     }
+    console.log(`✅ All 9 core business verticals synced (${verticalsData.length} total)`);
 
-    // Seed Courses
-    const coursesCount = await Course.countDocuments();
-    if (coursesCount === 0) {
-      const initialCourses = [
-        {
-          title: 'Patent Drafting & Global Prosecution Mastery',
-          slug: 'patent-drafting-global-prosecution',
-          category: 'IPR & Law',
-          duration: '8 Weeks',
-          level: 'Intermediate',
-          mode: 'Online',
-          fee: '14,999',
-          description: 'Learn professional patent drafting according to USPTO, EPO, and Indian Patent Office guidelines from registered patent attorneys.',
-          syllabus: [
-            { module: 'Module 1: Fundamentals of Patent Law', topics: ['Patentability criteria', 'Prior art searching', 'Novelty analysis'] },
-            { module: 'Module 2: Patent Drafting & Claims', topics: ['Independent vs dependent claims', 'Specification drafting', 'Drawings & abstract'] },
-            { module: 'Module 3: Prosecution & Filing', topics: ['Filing provisional & complete specs', 'First Examination Reports (FER)', 'International PCT filing'] },
-          ],
-          prerequisites: ['Basic scientific, engineering, or legal background'],
-          outcomes: ['Draft complete patent specifications independently', 'Formulate defensible claim structures', 'Respond to patent examination reports'],
-          order: 1,
-          isActive: true,
-        },
-        {
-          title: 'Generative AI Engineering & LLM Architecture',
-          slug: 'generative-ai-engineering-llm-architecture',
-          category: 'AI & Tech',
-          duration: '10 Weeks',
-          level: 'Advanced',
-          mode: 'Hybrid',
-          fee: '24,999',
-          description: 'Hands-on deep dive into transformer architectures, RAG systems, vector embeddings, fine-tuning, and production deployment of autonomous agents.',
-          syllabus: [
-            { module: 'Module 1: Transformer Foundations', topics: ['Self-attention mechanics', 'Positional embeddings', 'Tokenization'] },
-            { module: 'Module 2: RAG & Vector DBs', topics: ['Hybrid search', 'Chunking strategies', 'Rerankers and semantic caching'] },
-            { module: 'Module 3: Fine-Tuning & Multi-Agent', topics: ['LoRA & QLoRA fine-tuning', 'Autonomous agent loops', 'Evaluations & guardrails'] },
-          ],
-          prerequisites: ['Proficiency in Python', 'Fundamentals of machine learning'],
-          outcomes: ['Deploy production-grade RAG systems', 'Fine-tune open-weight LLMs on proprietary datasets', 'Architect autonomous multi-agent pipelines'],
-          order: 2,
-          isActive: true,
-        },
-        {
-          title: 'Technology Commercialization & Venture Creation',
-          slug: 'technology-commercialization-venture-creation',
-          category: 'Entrepreneurship',
-          duration: '6 Weeks',
-          level: 'Beginner',
-          mode: 'Online',
-          fee: '9,999',
-          description: 'A practical roadmap for translating lab research and patented prototypes into viable, venture-backed tech startups.',
-          syllabus: [
-            { module: 'Module 1: Lab to Market', topics: ['Technology Readiness Levels (TRL)', 'Market sizing & TAM/SAM/SOM', 'IP licensing models'] },
-            { module: 'Module 2: Venture Building', topics: ['Unit economics', 'Cap table design', 'Venture capital pitching'] },
-          ],
-          prerequisites: ['Open to all researchers, founders, and students'],
-          outcomes: ['Formulate viable commercialization strategies', 'Build financial models and investor decks', 'Navigate university spinout licensing'],
-          order: 3,
-          isActive: true,
-        },
-      ];
-      await Course.insertMany(initialCourses);
-      console.log('✅ Default courses seeded');
+    // Seed Courses (Sync all 20 flagship starter courses from blueprint)
+    const { default: coursesData } = await import('../seed/data/courses.js');
+    for (const crs of coursesData) {
+      await Course.findOneAndUpdate(
+        { slug: crs.slug },
+        crs,
+        { upsert: true, new: true, setDefaultsOnInsert: true }
+      );
     }
+    console.log(`✅ All 20 flagship courses synced (${coursesData.length} total)`);
 
     // Seed Events
     const eventsCount = await Event.countDocuments();
@@ -315,6 +202,7 @@ export const connectDB = async () => {
 
   // Fallback to MongoMemoryServer
   try {
+    const { MongoMemoryServer } = await import('mongodb-memory-server');
     mongod = await MongoMemoryServer.create({
       instance: {
         dbName: 'aethrivo',

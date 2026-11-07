@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import mongoSanitize from 'express-mongo-sanitize';
 import dotenv from 'dotenv';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { connectDB } from './src/config/db.js';
 import { errorHandler } from './src/middleware/errorHandler.js';
@@ -55,9 +56,9 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', uptime: process.uptime(), timestamp: new Date() });
 });
 
-// Serve client build in production
+// Serve client build
 const clientDist = path.resolve(__dirname, '../client/dist');
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' || fs.existsSync(clientDist)) {
   app.use(express.static(clientDist));
   app.get('*', (req, res) => {
     if (req.path.startsWith('/api/')) {

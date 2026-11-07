@@ -4,24 +4,30 @@ import { useQuery } from '@tanstack/react-query';
 import {
   Users, BookOpen, Calendar, Layers, ArrowRight, ChevronRight,
   Shield, Cpu, GraduationCap, FlaskConical, Lightbulb, FileText,
-  CheckCircle2, Star, Sparkles, TrendingUp, Award, Clock, ArrowUpRight
+  CheckCircle2, Star, Sparkles, TrendingUp, Award, Clock, ArrowUpRight,
+  Heart, Building2, Briefcase
 } from 'lucide-react';
 import api from '../lib/api';
+import { verticalsData } from '../data/verticalsData';
+import { coursesData } from '../data/coursesData';
 
 const verticalIcons = {
-  'ipr-patents': Shield,
-  'ai-emerging-tech': Cpu,
-  'corporate-training': GraduationCap,
-  'research-consulting': FlaskConical,
-  'incubation-startups': Lightbulb,
-  'legal-compliance': FileText,
+  ipr: Shield,
+  academy: GraduationCap,
+  skills: Cpu,
+  research: FlaskConical,
+  corporate: Briefcase,
+  conferences: Calendar,
+  talent: Users,
+  wellbeing: Heart,
+  'mou-collaborations': Building2,
 };
 
 const stats = [
   { icon: Users, label: 'Active Members', value: '500+', change: '+24% this month' },
-  { icon: BookOpen, label: 'Specialized Courses', value: '50+', change: 'Updated weekly' },
+  { icon: BookOpen, label: 'Flagship Courses', value: '20+', change: 'Updated weekly' },
   { icon: Calendar, label: 'Annual Events', value: '100+', change: 'Global & regional' },
-  { icon: Layers, label: 'Core Verticals', value: '6+', change: 'End-to-end support' },
+  { icon: Layers, label: 'Core Verticals', value: '9', change: 'End-to-end integration' },
 ];
 
 const pillars = [
@@ -101,8 +107,8 @@ export default function Home() {
     },
   });
 
-  const topVerticals = verticals?.slice(0, 6) ?? [];
-  const topCourses = courses?.slice(0, 3) ?? [];
+  const topVerticals = (verticals && verticals.length >= 9) ? verticals : verticalsData;
+  const topCourses = (courses && courses.length >= 3) ? courses.slice(0, 6) : coursesData.slice(0, 6);
   const topEvents = events?.slice(0, 3) ?? [];
   const topExperts = experts?.slice(0, 4) ?? [];
 
@@ -241,10 +247,10 @@ export default function Home() {
               Specialized Ecosystem
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-              Six Dedicated Verticals of Excellence
+              Nine Dedicated Verticals of Excellence
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-3 max-w-2xl">
-              From individual inventors needing patent filings to global corporations structuring multilateral MoUs.
+              Connecting learners, faculty, researchers, experts, institutions and industry across nine specialized domains.
             </p>
           </div>
           <Link

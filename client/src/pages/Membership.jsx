@@ -78,10 +78,53 @@ const categoryFields = {
 
 const STEPS = ['Category', 'Personal Info', 'Details', 'Review & Submit'];
 
+const qualificationOptions = [
+  'SSLC / 10th',
+  'PUC / 12th',
+  'ITI',
+  'Diploma',
+  'Undergraduate degree',
+  'Postgraduate degree',
+  'MBA / MCA',
+  'M.Tech / M.E.',
+  'M.Sc.',
+  'M.Phil.',
+  'Ph.D.',
+  'Postdoctoral',
+  'Professional qualification',
+  'Other',
+];
+
+const domainExpertiseOptions = [
+  'Management (HR, leadership, marketing, finance, strategy)',
+  'Project management (Agile, Scrum, Jira, PMP, Primavera P6)',
+  'Data analytics (Power BI, Excel, Tableau, SQL, Python, R)',
+  'Artificial intelligence (Gen AI, prompt engineering, AI agents)',
+  'Software / IT (Java, Python, React, Node.js, Cloud, Docker)',
+  'Engineering (AutoCAD, SolidWorks, CATIA, ANSYS, MATLAB)',
+  'Research (SPSS, AMOS, SmartPLS, NVivo, Bibliometrics)',
+  'IPR (Patent search, drafting, trademarks, copyright)',
+  'Education (FDP, SDP, teaching, curriculum, OBE)',
+  'Digital marketing (SEO, Google Ads, Meta Ads, analytics)',
+  'Corporate (Six Sigma, Lean, Kaizen, OKR, performance)',
+  'Entrepreneurship (Business model, startup, pitch deck)',
+  'Wellbeing (Workplace culture, employee engagement, OHI/OTI)',
+];
+
 export default function Membership() {
   const [step, setStep] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [personal, setPersonal] = useState({ name: '', email: '', phone: '', address: '', city: '', state: '', country: '' });
+  const [personal, setPersonal] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    qualification: '',
+    domainExpertise: '',
+    address: '',
+    city: '',
+    state: '',
+    country: 'India',
+  });
   const [categoryData, setCategoryData] = useState({});
   const [cvFile, setCvFile] = useState(null);
   const [consent, setConsent] = useState(false);
@@ -242,27 +285,92 @@ export default function Membership() {
             <div>
               <h2 className="font-heading text-2xl font-bold text-gray-900 dark:text-white mb-6">Personal Information</h2>
               <div className="grid sm:grid-cols-2 gap-5">
-                {[
-                  { name: 'name', label: 'Full Name *', type: 'text', placeholder: 'Your full name' },
-                  { name: 'email', label: 'Email *', type: 'email', placeholder: 'you@example.com' },
-                  { name: 'phone', label: 'Phone *', type: 'tel', placeholder: '+91 XXXXX XXXXX' },
-                  { name: 'address', label: 'Address', type: 'text', placeholder: 'Your address' },
-                  { name: 'city', label: 'City', type: 'text', placeholder: 'City' },
-                  { name: 'state', label: 'State', type: 'text', placeholder: 'State' },
-                  { name: 'country', label: 'Country', type: 'text', placeholder: 'Country' },
-                ].map((field) => (
-                  <div key={field.name}>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{field.label}</label>
-                    <input
-                      type={field.type}
-                      name={field.name}
-                      value={personal[field.name]}
-                      onChange={handlePersonalChange}
-                      placeholder={field.placeholder}
-                      className="input-field w-full"
-                    />
-                  </div>
-                ))}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={personal.name}
+                    onChange={handlePersonalChange}
+                    placeholder="Your full name"
+                    className="input-field w-full"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email ID *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={personal.email}
+                    onChange={handlePersonalChange}
+                    placeholder="you@example.com"
+                    className="input-field w-full"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={personal.phone}
+                    onChange={handlePersonalChange}
+                    placeholder="+91 XXXXX XXXXX"
+                    className="input-field w-full"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Highest Qualification *</label>
+                  <select
+                    name="qualification"
+                    value={personal.qualification}
+                    onChange={handlePersonalChange}
+                    className="input-field w-full"
+                  >
+                    <option value="">Select Qualification</option>
+                    {qualificationOptions.map((q) => (
+                      <option key={q} value={q}>{q}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Domain Expertise *</label>
+                  <select
+                    name="domainExpertise"
+                    value={personal.domainExpertise}
+                    onChange={handlePersonalChange}
+                    className="input-field w-full"
+                  >
+                    <option value="">Select Primary Domain Expertise</option>
+                    {domainExpertiseOptions.map((d) => (
+                      <option key={d} value={d}>{d}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">City</label>
+                  <input
+                    type="text"
+                    name="city"
+                    value={personal.city}
+                    onChange={handlePersonalChange}
+                    placeholder="e.g. Bengaluru, Mumbai, Pune"
+                    className="input-field w-full"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Country *</label>
+                  <input
+                    type="text"
+                    name="country"
+                    value={personal.country}
+                    onChange={handlePersonalChange}
+                    placeholder="Country"
+                    className="input-field w-full"
+                  />
+                </div>
               </div>
             </div>
           )}
