@@ -52,7 +52,7 @@ export default function Navbar() {
             <img src="/logo.jpeg" alt="Aethrivo" className="h-10 w-auto rounded-xl shadow-xs" />
             <div className="flex flex-col">
               <span className="text-xl font-black gradient-text tracking-wide font-heading leading-tight">
-                AETHRIVO
+                Aethrivo
               </span>
               <span className="text-[9px] font-bold text-slate-400 tracking-wider hidden sm:block">
                 CONNECT • LEARN • INNOVATE • GROW

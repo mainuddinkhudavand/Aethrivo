@@ -106,4 +106,4 @@ Or run them individually:
 ---
 
 ## 📄 License
-&copy; 2026 AETHRIVO. All rights reserved.
+&copy; 2026 Aethrivo. All rights reserved.

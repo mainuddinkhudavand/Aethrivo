@@ -32,7 +32,7 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2 mb-4">
               <img src="/logo.jpeg" alt="Aethrivo" className="h-10 w-auto rounded-lg" />
               <span className="text-xl font-bold text-white tracking-wide font-heading">
-                AETHRIVO
+                Aethrivo
               </span>
             </Link>
             <p className="text-xs font-bold text-primary-400 tracking-widest mb-3 uppercase">
@@ -132,6 +132,17 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Aethrivo. All rights reserved. Functional Website Blueprint V1.0.</p>
+          <p className="text-slate-400">
+            Designed by{' '}
+            <a
+              href="https://my-portfolio-one-gilt-57.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-400 hover:text-primary-300 hover:underline font-medium transition-colors"
+            >
+              Mainuddin Khudavand
+            </a>
+          </p>
           <div className="flex items-center gap-6">
             <Link to="/about" className="hover:text-slate-300">Privacy Notice</Link>
             <Link to="/about" className="hover:text-slate-300">Terms of Use</Link>

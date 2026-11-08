@@ -63,7 +63,7 @@ export default function Sidebar({ role = 'admin', isOpen, onClose }) {
           <div className="flex items-center gap-2">
             <img src="/logo.jpeg" alt="Aethrivo" className="h-9 w-auto rounded-lg" />
             <span className="text-lg font-bold gradient-text tracking-wide font-heading">
-              AETHRIVO
+              Aethrivo
             </span>
           </div>
           <button

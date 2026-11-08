@@ -103,7 +103,7 @@ export default function Login() {
         <div className="relative z-10 max-w-lg text-center">
           <Link to="/" className="inline-flex items-center gap-3 mb-8 group">
             <img src="/logo.jpeg" alt="Aethrivo" className="h-14 w-auto rounded-xl shadow-lg shadow-black/50 group-hover:scale-105 transition-transform" />
-            <span className="font-heading text-3xl font-black tracking-tight text-white">AETHRIVO</span>
+            <span className="font-heading text-3xl font-black tracking-tight text-white">Aethrivo</span>
           </Link>
           <p className="text-xl font-heading font-semibold text-primary-300 tracking-widest mb-4">
             CONNECT. LEARN. INNOVATE. GROW.

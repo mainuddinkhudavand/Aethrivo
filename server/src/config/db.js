@@ -85,7 +85,7 @@ async function seedDefaultData() {
     if (eventsCount === 0) {
       const initialEvents = [
         {
-          title: 'AETHRIVO Global IP & Deep-Tech Summit 2026',
+          title: 'Aethrivo Global IP & Deep-Tech Summit 2026',
           slug: 'aethrivo-global-ip-deep-tech-summit-2026',
           type: 'Conference',
           startDate: new Date('2026-12-15'),

@@ -226,7 +226,7 @@ export default function Membership() {
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="font-heading text-4xl md:text-5xl font-bold gradient-text mb-4">Become a Member</h1>
-          <p className="text-gray-600 dark:text-gray-400">Join the AETHRIVO community in 4 simple steps.</p>
+          <p className="text-gray-600 dark:text-gray-400">Join the Aethrivo community in 4 simple steps.</p>
         </div>
 
         {/* Progress Bar */}
@@ -464,7 +464,7 @@ export default function Membership() {
                     className="mt-1 w-5 h-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
                   />
                   <span className="text-sm text-gray-600 dark:text-gray-400">
-                    I consent to AETHRIVO collecting and processing my data for membership purposes. I agree to the terms and conditions and privacy policy.
+                    I consent to Aethrivo collecting and processing my data for membership purposes. I agree to the terms and conditions and privacy policy.
                   </span>
                 </label>
               </div>

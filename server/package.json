@@ -1,7 +1,7 @@
 {
   "name": "aethrivo-server",
   "version": "1.0.0",
-  "description": "AETHRIVO backend – MERN stack with Tailwind CSS UI",
+  "description": "Aethrivo backend – MERN stack with Tailwind CSS UI",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "start": "node server.js",
     "lint": "eslint src/**/*.js"
   },
-  "author": "AETHRIVO Team",
+  "author": "Aethrivo Team",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",

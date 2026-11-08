@@ -51,7 +51,7 @@ export default function MemberCard() {
             <div className="gradient-primary px-8 py-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-white/70 text-xs font-semibold uppercase tracking-widest">AETHRIVO</p>
+                  <p className="text-white/70 text-xs font-semibold uppercase tracking-widest">Aethrivo</p>
                   <p className="text-white text-sm font-medium mt-1">Member Card</p>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
@@ -128,7 +128,7 @@ export default function MemberCard() {
             {/* Card Footer */}
             <div className="px-8 py-4 bg-gray-50 dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
               <p className="text-xs text-gray-400 text-center">
-                This is a digital member card issued by AETHRIVO. Verify at aethrivo.com
+                This is a digital member card issued by Aethrivo. Verify at aethrivo.com
               </p>
             </div>
           </div>

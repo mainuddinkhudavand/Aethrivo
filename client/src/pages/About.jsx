@@ -23,7 +23,7 @@ export default function About() {
       {/* Hero */}
       <section className="gradient-hero py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white mb-6">About AETHRIVO</h1>
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white mb-6">About Aethrivo</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Empowering the next generation of learners, innovators, and leaders through a comprehensive ecosystem of education, research, and industry collaboration.
           </p>
@@ -40,7 +40,7 @@ export default function About() {
             Bridging Academia, Industry, and Innovation
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
-            AETHRIVO is a transformative platform that connects students, faculty, researchers, entrepreneurs, and industry professionals
+            Aethrivo is a transformative platform that connects students, faculty, researchers, entrepreneurs, and industry professionals
             under one roof. We believe in creating synergies that drive meaningful progress — from skill development and research
             to entrepreneurship and social impact.
           </p>
@@ -98,7 +98,7 @@ export default function About() {
             Ready to Join Our Community?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
-            Become a part of the AETHRIVO ecosystem and unlock endless possibilities for growth and collaboration.
+            Become a part of the Aethrivo ecosystem and unlock endless possibilities for growth and collaboration.
           </p>
           <Link to="/membership" className="inline-flex items-center gap-2 bg-white text-primary-700 px-8 py-3 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">
             Join as a Member <ArrowRight className="w-5 h-5" />
