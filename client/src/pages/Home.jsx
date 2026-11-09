@@ -15,9 +15,7 @@ const verticalIcons = {
   ipr: Shield,
   academy: GraduationCap,
   skills: Cpu,
-  research: FlaskConical,
   corporate: Briefcase,
-  conferences: Calendar,
   talent: Users,
   wellbeing: Heart,
   'mou-collaborations': Building2,
@@ -26,30 +24,30 @@ const verticalIcons = {
 const stats = [
   { icon: Users, label: 'Active Members', value: '500+', change: '+24% this month' },
   { icon: BookOpen, label: 'Flagship Courses', value: '20+', change: 'Updated weekly' },
-  { icon: Calendar, label: 'Annual Events', value: '100+', change: 'Global & regional' },
-  { icon: Layers, label: 'Core Verticals', value: '9', change: 'End-to-end integration' },
+  { icon: Award, label: 'Domain Experts', value: '50+', change: 'Verified specialists' },
+  { icon: Layers, label: 'Core Verticals', value: '7', change: 'End-to-end integration' },
 ];
 
 const pillars = [
   {
+    icon: Cpu,
+    title: 'Work-Ready Industry Skills',
+    description: 'Master practical tools in project management, data analytics, generative AI, CAD engineering, and software missing from regular college curricula.',
+  },
+  {
     icon: Shield,
     title: 'Intellectual Property Protection',
-    description: 'Protect your breakthroughs with patent drafting, trademark filing, and international PCT prosecution guidance from registered attorneys.',
+    description: 'Protect innovations with prior-art search, patentability assessment, drafting assistance, and trademark filings guided by verified practitioners.',
   },
   {
-    icon: Cpu,
-    title: 'Cutting-Edge AI & Tech',
-    description: 'Transition from research to production with applied Generative AI, machine learning pipelines, and specialized enterprise architecture.',
+    icon: GraduationCap,
+    title: 'Institutional Development',
+    description: 'Empower higher education through Faculty Development Programmes (FDP), Student Development (SDP), Outcome-Based Education (OBE), and leadership training.',
   },
   {
-    icon: FlaskConical,
-    title: 'University-Industry Consortia',
-    description: 'Bridge academic research labs with corporate sponsors, licensing offices, and government innovation grants.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Venture Incubation & Scale',
-    description: 'Transform novel prototypes into scalable, fundable startups with seed networks, mentor syndicates, and investor pitch decks.',
+    icon: Building2,
+    title: 'MoUs & Industry Partnerships',
+    description: 'Form structured, active bilateral partnerships between colleges, universities, startups, MSMEs, and global technology enterprises.',
   },
 ];
 
@@ -107,7 +105,7 @@ export default function Home() {
     },
   });
 
-  const topVerticals = (verticals && verticals.length >= 9) ? verticals : verticalsData;
+  const topVerticals = (verticals && verticals.length >= 7) ? verticals : verticalsData;
   const topCourses = (courses && courses.length >= 3) ? courses.slice(0, 6) : coursesData.slice(0, 6);
   const topEvents = events?.slice(0, 3) ?? [];
   const topExperts = experts?.slice(0, 4) ?? [];
@@ -132,18 +130,18 @@ export default function Home() {
           {/* Announcement Pill Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-cyan-300 mb-8 hover:bg-white/15 transition-all">
             <Sparkles className="w-4 h-4 text-cyan-400 animate-spin" style={{ animationDuration: '8s' }} />
-            <span>Next-Gen Platform for Innovation, Patents & Industry Mastery</span>
+            <span>One Step Towards Work Ready • Community of Intellectual & Domain Experts</span>
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
             <Link to="/membership" className="text-white hover:underline flex items-center gap-1 font-semibold">
-              Explore 9 Member Roles <ArrowRight className="w-3.5 h-3.5" />
+              Join Free Today <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           {/* Main Hero Heading */}
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
-            <span className="block text-white">ACCELERATE</span>
+            <span className="block text-white">ONE STEP TOWARDS</span>
             <span className="bg-gradient-to-r from-primary-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent">
-              INNOVATION & IMPACT
+              WORK READY
             </span>
           </h1>
 
@@ -153,8 +151,7 @@ export default function Home() {
           </p>
 
           <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-10">
-            A comprehensive institutional ecosystem uniting researchers, inventors, industry leaders, and entrepreneurs.
-            From patent search and drafting to corporate upskilling and seed incubation.
+            Aethrivo is the hub for an intellectual and domain expert community — empowering students, faculty, and professionals to become industry-ready with high-impact practical skills missing from regular academics.
           </p>
 
           {/* Hero CTAs */}
@@ -169,13 +166,13 @@ export default function Home() {
               to="/courses"
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-200 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all flex items-center justify-center gap-2 text-base"
             >
-              Explore Masterclasses <BookOpen className="w-5 h-5" />
+              Explore Skill Courses <BookOpen className="w-5 h-5" />
             </Link>
             <Link
               to="/verticals"
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-all flex items-center justify-center gap-2 text-base"
             >
-              Browse Services <ChevronRight className="w-5 h-5" />
+              Seven Verticals <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
 
@@ -247,10 +244,10 @@ export default function Home() {
               Specialized Ecosystem
             </div>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-              Nine Dedicated Verticals of Excellence
+              Seven Dedicated Verticals of Excellence
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-3 max-w-2xl">
-              Connecting learners, faculty, researchers, experts, institutions and industry across nine specialized domains.
+              Connecting learners, faculty, domain experts, institutions and industry across seven high-impact professional domains.
             </p>
           </div>
           <Link
@@ -562,14 +559,14 @@ export default function Home() {
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-cyan-400/20 blur-3xl pointer-events-none" />
           <div className="relative z-10 max-w-3xl">
             <span className="px-3.5 py-1.5 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider inline-block mb-4">
-              Join the Vanguard of Innovation
+              One Step Towards Work Ready
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6">
-              Unlock Your Comprehensive Institutional Membership
+              Empower Yourself with Industry-Ready Skills
             </h2>
             <p className="text-primary-100 text-base sm:text-lg mb-8 leading-relaxed">
-              Whether you are a Student researcher, Faculty innovator, Industry practitioner, or Institutional dean,
-              Aethrivo equips you with verifiable digital credentials, tailored service pipelines, and specialized networks.
+              Whether you are a student preparing for your career, a faculty member advancing curriculum impact, or an enterprise seeking verified domain experts,
+              Aethrivo equips you with real-world competencies missing from regular academics.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link

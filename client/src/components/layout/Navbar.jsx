@@ -3,13 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, LogOut, LayoutDashboard, Shield, UserCheck, ChevronDown, Layers } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 
-const nineVerticals = [
+const sevenVerticals = [
   { slug: 'ipr', name: 'Aethrivo IPR' },
   { slug: 'academy', name: 'Aethrivo Academy' },
   { slug: 'skills', name: 'Aethrivo Skills' },
-  { slug: 'research', name: 'Aethrivo Research' },
   { slug: 'corporate', name: 'Aethrivo Corporate' },
-  { slug: 'conferences', name: 'Aethrivo Conferences' },
   { slug: 'talent', name: 'Aethrivo Talent' },
   { slug: 'wellbeing', name: 'Aethrivo Wellbeing' },
   { slug: 'mou-collaborations', name: 'Aethrivo MoU & Collaborations' },
@@ -55,7 +53,7 @@ export default function Navbar() {
                 Aethrivo
               </span>
               <span className="text-[9px] font-bold text-slate-400 tracking-wider hidden sm:block">
-                CONNECT • LEARN • INNOVATE • GROW
+                ONE STEP TOWARDS WORK READY
               </span>
             </div>
           </Link>
@@ -79,7 +77,7 @@ export default function Navbar() {
               {verticalsDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 py-3 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                   <div className="px-3 py-1.5 mb-1 border-b border-slate-100 flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">9 Core Business Verticals</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">7 Core Business Verticals</span>
                     <Link
                       to="/verticals"
                       onClick={() => setVerticalsDropdownOpen(false)}
@@ -89,7 +87,7 @@ export default function Navbar() {
                     </Link>
                   </div>
                   <div className="space-y-0.5">
-                    {nineVerticals.map((vert, idx) => (
+                    {sevenVerticals.map((vert, idx) => (
                       <Link
                         key={vert.slug}
                         to={`/verticals/${vert.slug}`}

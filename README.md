@@ -1,18 +1,26 @@
 # Aethrivo Platform
 
-Aethrivo is a full-stack intellectual property (IP), research, and institutional innovation ecosystem. It provides public portals for masterclasses, international symposiums, verified technical & legal expert consultation, membership registration, and multi-tier administrative workflows (Admin & Manager Portals).
+**One Step Towards Work Ready**
+
+Aethrivo is a premier hub for an intellectual and domain expert community, dedicated to empowering learners, faculty, and industry professionals with high-impact, real-world skills missing from regular academics. It provides integrated portals for 7 core business verticals, verified expert consultations, practical skill courses, membership registration, and multi-tier administrative workflows (Admin & Manager Portals).
 
 ---
 
 ## 🌟 Key Features
 
 ### 🏛️ Public Experience
-- **Hero & Innovation Hub**: Space-grade reactive hero showcasing patent prosecution, AI engineering, institutional MoUs, and verified expert directory.
-- **Masterclasses & Courses**: Explore executive courses with curriculum previews, duration, fee schedules, certification tracks, and 1-click enrollment.
-- **Flagship Events**: Conferences, symposiums, hackathons, and workshops with online registration.
-- **Expert Directory**: Browse, filter, and connect directly with patent attorneys, AI researchers, and valuation specialists.
-- **Membership Registration**: 4-step membership application (Students, Faculty, Industry, Research Scholars, Experts, Institutions) with automated sequential member ID generation (e.g., `AET-STU-001001`).
-- **Institutional Verticals**: Dedicated vertical portfolios (IP Strategy, AI & Emerging Tech, Life Sciences, Energy Transition, Defense & Aerospace).
+- **One Step Towards Work Ready**: Reactive experience showcasing 7 specialized verticals bridging the academic-industry gap.
+- **Seven Core Business Verticals**:
+  1. **Aethrivo IPR**: Patent search, prior art novelty, drafting assistance, trademarks, and IP commercialisation.
+  2. **Aethrivo Academy**: Institutional FDP, SDP, MDP, EDP, OBE alignment, and leadership development.
+  3. **Aethrivo Skills**: Practical courses in Project Management, Data Analytics, Generative AI, CAD, and Software.
+  4. **Aethrivo Corporate**: Corporate training, team building, HR consulting, and Lean Six Sigma improvement.
+  5. **Aethrivo Talent**: Searchable directory of verified patent attorneys, corporate trainers, professors, and consultants.
+  6. **Aethrivo Wellbeing**: Evidence-based Organisational Happiness Index (OHI), Toxicity Index (OTI), and institutional culture diagnostics.
+  7. **Aethrivo MoU & Collaborations**: Bilateral partnerships uniting colleges, universities, MSMEs, startups, and tech firms.
+- **Skill Courses & Masterclasses**: Explore industry-aligned courses with syllabus previews, level, delivery mode, and 1-click enrolment.
+- **Expert Directory**: Browse, filter, and connect directly with verified domain specialists and corporate trainers.
+- **Membership Registration**: Free membership with automated sequential member ID generation (e.g., `AET-STU-000001`).
 
 ### 🛡️ Portals & Role-Based Access
 - **Admin Portal**:

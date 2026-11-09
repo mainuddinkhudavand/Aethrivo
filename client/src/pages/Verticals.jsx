@@ -11,9 +11,7 @@ const iconMap = {
   ipr: Shield,
   academy: GraduationCap,
   skills: Cpu,
-  research: FlaskConical,
   corporate: Briefcase,
-  conferences: Calendar,
   talent: Users,
   wellbeing: Heart,
   'mou-collaborations': Building2,
@@ -44,8 +42,8 @@ export default function Verticals() {
     staleTime: 5 * 60 * 1000,
   });
 
-  // Always fallback gracefully to the blueprint 9 verticals so all 9 are always visible
-  const verticals = (serverVerticals && serverVerticals.length >= 9) ? serverVerticals : verticalsData;
+  // Always fallback gracefully to the blueprint 7 verticals so all 7 are always visible
+  const verticals = (serverVerticals && serverVerticals.length >= 7) ? serverVerticals : verticalsData;
 
   return (
     <div className="font-body section-padding bg-slate-50/50 min-h-screen">
@@ -56,10 +54,10 @@ export default function Verticals() {
             Aethrivo Ecosystem Architecture
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-4">
-            Our Nine Core Business Verticals
+            Our Seven Core Business Verticals
           </h1>
           <p className="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
-            One integrated platform connecting learners, faculty, researchers, experts, institutions, and industry to skills, knowledge, consultancy, and multilateral collaboration.
+            One integrated professional ecosystem connecting students, faculty, domain experts, trainers, consultants, institutions, and industry to acquire real-world skills, intellectual property services, corporate consulting, talent engagement, wellbeing assessments, and institutional collaboration.
           </p>
         </div>
 
@@ -70,7 +68,7 @@ export default function Verticals() {
           </div>
         )}
 
-        {/* Verticals Grid - All 9 Verticals */}
+        {/* Verticals Grid - All 7 Verticals */}
         {verticals && verticals.length > 0 && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {verticals.map((vertical, idx) => {

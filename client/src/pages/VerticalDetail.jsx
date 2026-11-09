@@ -15,9 +15,7 @@ const iconMap = {
   ipr: Shield,
   academy: GraduationCap,
   skills: Cpu,
-  research: FlaskConical,
   corporate: Briefcase,
-  conferences: Calendar,
   talent: Users,
   wellbeing: Heart,
   'mou-collaborations': Building2,
@@ -414,43 +412,6 @@ export default function VerticalDetail() {
                     onChange={handleChange}
                     className="input-field w-full"
                     placeholder="e.g. Mechanical, Biotech, Software, Electronics"
-                  />
-                </div>
-              </>
-            )}
-
-            {slug === 'research' && (
-              <>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                    Research Stage *
-                  </label>
-                  <select
-                    name="customField1"
-                    value={form.customField1}
-                    onChange={handleChange}
-                    className="input-field w-full"
-                  >
-                    <option value="">Select Research Stage</option>
-                    <option value="Topic Formulation">Topic Formulation</option>
-                    <option value="Literature Review">Literature Review</option>
-                    <option value="Questionnaire Design">Questionnaire Design</option>
-                    <option value="Data Collection">Data Collection</option>
-                    <option value="Data Analysis (SPSS/SmartPLS/R)">Data Analysis (SPSS/SmartPLS/R)</option>
-                    <option value="Paper Revision / Peer Review">Paper Revision / Peer Review</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                    Discipline / Field of Study
-                  </label>
-                  <input
-                    type="text"
-                    name="customField2"
-                    value={form.customField2}
-                    onChange={handleChange}
-                    className="input-field w-full"
-                    placeholder="e.g. Management, Social Sciences, Engineering"
                   />
                 </div>
               </>

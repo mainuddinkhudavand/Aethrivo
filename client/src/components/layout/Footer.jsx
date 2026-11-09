@@ -6,16 +6,14 @@ export default function Footer() {
     { to: '/verticals/ipr', label: 'Aethrivo IPR' },
     { to: '/verticals/academy', label: 'Aethrivo Academy' },
     { to: '/courses', label: 'Aethrivo Skills' },
-    { to: '/verticals/research', label: 'Aethrivo Research' },
     { to: '/verticals/corporate', label: 'Aethrivo Corporate' },
-    { to: '/events', label: 'Aethrivo Conferences' },
     { to: '/experts', label: 'Aethrivo Talent' },
     { to: '/verticals/wellbeing', label: 'Aethrivo Wellbeing' },
     { to: '/verticals/mou-collaborations', label: 'Aethrivo MoU & Collaborations' },
   ];
 
   const platformLinks = [
-    { to: '/verticals', label: 'All 9 Verticals' },
+    { to: '/verticals', label: 'All 7 Verticals' },
     { to: '/courses', label: 'Course Catalogue (20)' },
     { to: '/membership', label: 'Free Membership' },
     { to: '/about', label: 'About Aethrivo' },
@@ -36,24 +34,24 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs font-bold text-primary-400 tracking-widest mb-3 uppercase">
-              CONNECT. LEARN. INNOVATE. GROW.
+              ONE STEP TOWARDS WORK READY
             </p>
             <p className="text-sm text-slate-400 leading-relaxed mb-4 max-w-sm">
-              One platform connecting learners, faculty, researchers, experts, institutions and industry to skills, knowledge, consultancy and collaboration.
+              A hub for an intellectual and domain expert community, empowering students, faculty, and professionals to become industry-ready with high-impact practical skills missing from regular academics.
             </p>
             <div className="text-xs text-slate-500 space-y-1">
               <p>Free membership for students, faculty, and industry.</p>
-              <p>Nine dedicated service verticals with verified workflows.</p>
+              <p>Seven dedicated service verticals with verified workflows.</p>
             </div>
           </div>
 
-          {/* Column 2: The 9 Verticals */}
+          {/* Column 2: Core Verticals */}
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">
               Core Verticals
             </h3>
             <ul className="space-y-2">
-              {verticalsList.slice(0, 5).map((vert) => (
+              {verticalsList.slice(0, 4).map((vert) => (
                 <li key={vert.to}>
                   <Link
                     to={vert.to}
@@ -66,13 +64,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Verticals (cont.) */}
+          {/* Column 3: Talent, Wellbeing & MoUs */}
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-xs uppercase tracking-wider mb-4">
-              Collaborations & More
+              Talent & MoUs
             </h3>
             <ul className="space-y-2">
-              {verticalsList.slice(5).map((vert) => (
+              {verticalsList.slice(4).map((vert) => (
                 <li key={vert.to}>
                   <Link
                     to={vert.to}
@@ -87,7 +85,7 @@ export default function Footer() {
                   to="/verticals"
                   className="text-xs font-semibold text-primary-400 hover:underline inline-block mt-1"
                 >
-                  View All 9 Verticals →
+                  View All 7 Verticals →
                 </Link>
               </li>
             </ul>

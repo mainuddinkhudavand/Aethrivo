@@ -56,9 +56,9 @@ async function seedDefaultData() {
       console.log('✅ Manager user created (manager@aethrivo.com)');
     }
 
-    // Seed Verticals (Sync all 9 core business verticals from blueprint)
+    // Seed Verticals (Sync all 7 core business verticals from revised blueprint)
     const { default: verticalsData } = await import('../seed/data/verticals.js');
-    const legacySlugs = ['ipr-patents', 'ai-emerging-tech', 'corporate-training', 'research-consulting', 'incubation-startups', 'legal-compliance'];
+    const legacySlugs = ['ipr-patents', 'ai-emerging-tech', 'corporate-training', 'research-consulting', 'incubation-startups', 'legal-compliance', 'research', 'conferences'];
     await Vertical.deleteMany({ slug: { $in: legacySlugs } });
     for (const vert of verticalsData) {
       await Vertical.findOneAndUpdate(
@@ -67,7 +67,7 @@ async function seedDefaultData() {
         { upsert: true, new: true, setDefaultsOnInsert: true }
       );
     }
-    console.log(`✅ All 9 core business verticals synced (${verticalsData.length} total)`);
+    console.log(`✅ All 7 core business verticals synced (${verticalsData.length} total)`);
 
     // Seed Courses (Sync all 20 flagship starter courses from blueprint)
     const { default: coursesData } = await import('../seed/data/courses.js');
