@@ -1,6 +1,6 @@
 # Aethrivo Platform
 
-**One Step Towards Work Ready**
+**One step towards work ready**
 
 Aethrivo is a premier hub for an intellectual and domain expert community, dedicated to empowering learners, faculty, and industry professionals with high-impact, real-world skills missing from regular academics. It provides integrated portals for 7 core business verticals, verified expert consultations, practical skill courses, membership registration, and multi-tier administrative workflows (Admin & Manager Portals).
 
@@ -9,7 +9,7 @@ Aethrivo is a premier hub for an intellectual and domain expert community, dedic
 ## 🌟 Key Features
 
 ### 🏛️ Public Experience
-- **One Step Towards Work Ready**: Reactive experience showcasing 7 specialized verticals bridging the academic-industry gap.
+- **One step towards work ready**: Reactive experience showcasing 7 specialized verticals bridging the academic-industry gap.
 - **Seven Core Business Verticals**:
   1. **Aethrivo IPR**: Patent search, prior art novelty, drafting assistance, trademarks, and IP commercialisation.
   2. **Aethrivo Academy**: Institutional FDP, SDP, MDP, EDP, OBE alignment, and leadership development.

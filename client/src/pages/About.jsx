@@ -27,8 +27,8 @@ export default function About() {
       {/* Hero */}
       <section className="gradient-hero py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-6">
-            One Step Towards Work Ready
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-cyan-300 text-xs font-bold tracking-wider mb-6">
+            One step towards work ready
           </div>
           <h1 className="font-heading text-4xl md:text-6xl font-bold text-white mb-6">About Aethrivo</h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -44,7 +44,7 @@ export default function About() {
             <Target className="w-4 h-4" /> What Aethrivo Does
           </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            One Step Towards Work Ready
+            One step towards work ready
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
             Aethrivo is one integrated professional ecosystem and community hub connecting students, faculty, domain experts, trainers, consultants, institutions, and industry under one roof.
@@ -107,7 +107,7 @@ export default function About() {
       <section className="gradient-primary py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-            Take Your Next Step Towards Work Ready
+            Take your next step towards work ready
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
             Become a part of the Aethrivo ecosystem and gain the real-world skills and expert connections that accelerate your future.

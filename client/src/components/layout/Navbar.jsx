@@ -53,7 +53,7 @@ export default function Navbar() {
                 Aethrivo
               </span>
               <span className="text-[9px] font-bold text-slate-400 tracking-wider hidden sm:block">
-                ONE STEP TOWARDS WORK READY
+                One step towards work ready
               </span>
             </div>
           </Link>
@@ -142,7 +142,7 @@ export default function Navbar() {
             ) : (
               <>
                 <Link to="/membership" className="btn-primary text-sm px-4 py-2 shadow-sm shadow-primary-500/20">
-                  Join Free
+                  Aethrivo Membership
                 </Link>
                 <Link
                   to="/login?role=admin"
@@ -250,7 +250,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="block w-full btn-primary text-sm px-4 py-2.5 text-center"
                 >
-                  Join Free
+                  Aethrivo Membership
                 </Link>
                 <div className="grid grid-cols-2 gap-2 pt-1">
                   <Link

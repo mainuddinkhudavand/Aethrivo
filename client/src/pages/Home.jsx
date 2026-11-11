@@ -31,7 +31,7 @@ const stats = [
 const pillars = [
   {
     icon: Cpu,
-    title: 'Work-Ready Industry Skills',
+    title: 'Work-ready industry skills',
     description: 'Master practical tools in project management, data analytics, generative AI, CAD engineering, and software missing from regular college curricula.',
   },
   {
@@ -130,18 +130,18 @@ export default function Home() {
           {/* Announcement Pill Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-medium text-cyan-300 mb-8 hover:bg-white/15 transition-all">
             <Sparkles className="w-4 h-4 text-cyan-400 animate-spin" style={{ animationDuration: '8s' }} />
-            <span>One Step Towards Work Ready • Community of Intellectual & Domain Experts</span>
+            <span>One step towards work ready • Community of intellectual & domain experts</span>
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
             <Link to="/membership" className="text-white hover:underline flex items-center gap-1 font-semibold">
-              Join Free Today <ArrowRight className="w-3.5 h-3.5" />
+              Aethrivo Membership <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           {/* Main Hero Heading */}
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
-            <span className="block text-white">ONE STEP TOWARDS</span>
+            <span className="block text-white">One step towards</span>
             <span className="bg-gradient-to-r from-primary-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent">
-              WORK READY
+              {' '}work ready
             </span>
           </h1>
 
@@ -558,8 +558,8 @@ export default function Home() {
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary-700 via-indigo-700 to-violet-800 text-white p-8 sm:p-14 lg:p-20 shadow-2xl shadow-primary-900/30">
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-cyan-400/20 blur-3xl pointer-events-none" />
           <div className="relative z-10 max-w-3xl">
-            <span className="px-3.5 py-1.5 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider inline-block mb-4">
-              One Step Towards Work Ready
+            <span className="px-3.5 py-1.5 rounded-full bg-white/20 text-white text-xs font-bold tracking-wider inline-block mb-4">
+              One step towards work ready
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6">
               Empower Yourself with Industry-Ready Skills

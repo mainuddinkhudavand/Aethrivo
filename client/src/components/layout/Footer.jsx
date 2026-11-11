@@ -15,7 +15,7 @@ export default function Footer() {
   const platformLinks = [
     { to: '/verticals', label: 'All 7 Verticals' },
     { to: '/courses', label: 'Course Catalogue (20)' },
-    { to: '/membership', label: 'Free Membership' },
+    { to: '/membership', label: 'Aethrivo Membership' },
     { to: '/about', label: 'About Aethrivo' },
     { to: '/login?role=admin', label: 'Admin Portal' },
     { to: '/login?role=manager', label: 'Manager Portal' },
@@ -33,8 +33,8 @@ export default function Footer() {
                 Aethrivo
               </span>
             </Link>
-            <p className="text-xs font-bold text-primary-400 tracking-widest mb-3 uppercase">
-              ONE STEP TOWARDS WORK READY
+            <p className="text-xs font-bold text-primary-400 tracking-wider mb-3">
+              One step towards work ready
             </p>
             <p className="text-sm text-slate-400 leading-relaxed mb-4 max-w-sm">
               A hub for an intellectual and domain expert community, empowering students, faculty, and professionals to become industry-ready with high-impact practical skills missing from regular academics.
